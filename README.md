@@ -1,0 +1,2 @@
+# MachineLearning-Costumer_Segmentation
+Bagaimana bila kita ingin mengelompokkan beberapa orang berdasarkan kebiasaanya?? Misal jam berapa mereka biasa makan siang, atau seberapa banyak porsi makan mereka? Tentu sulit jika kita harus mengelompokkanya secara manual, apalagi jika jumlah orangnya sampai ribuan, terlihat mustahil, tapi tidak denga Machine Learning, kali ini saya akan membuat projek yang akan menggelompokkan orang berdasarkan kebiasaan mereka, untuk kali ini saya menggunakan Pyhon dan algortima KMeans
