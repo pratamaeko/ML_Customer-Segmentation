@@ -31,13 +31,13 @@ pelanggan$NilaiBelanjaSetahun <- pelanggan$NilaiBelanjaSetahun/1000000
 set.seed(100)
 
 #buat variable untuk field yang akan kita gunakan
-field_yang_digunakan = c("Jenis.Kelamin.1", "Umur", "Profesi.1", "Tipe.Residen.1","NilaiBelanjaSetahun")
+field_yang_digunakan <- c("Jenis.Kelamin.1", "Umur", "Profesi.1", "Tipe.Residen.1","NilaiBelanjaSetahun")
 
 #sebelum kita mengaplikasikan model, kita butuh mencari parameter terbaik
 sse <- sapply(1:10, function(param_k){kmeans(pelanggan[field_yang_digunakan], param_k, nstart=25)$tot.withinss})
 
 jumlah_cluster_max <- 10
-ssdata = data.frame(cluster=c(1:jumlah_cluster_max),sse)
+ssdata <- data.frame(cluster=c(1:jumlah_cluster_max),sse)
 ggplot(ssdata, aes(x=cluster,y=sse)) + 
   geom_line(color="red") + geom_point() + 
   ylab("Within Cluster Sum of Squares") + xlab("Jumlah Cluster") +
