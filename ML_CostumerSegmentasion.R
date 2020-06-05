@@ -44,20 +44,19 @@ ggplot(ssdata, aes(x=cluster,y=sse)) +
   geom_text(aes(label=format(round(sse, 2), nsmall = 2)),hjust=-0.2, vjust=-0.5) +
   scale_x_discrete(limits=c(1:jumlah_cluster_max))
 
-#terlihat pada plot, titik cluter adalah 5, jadikan sebagai paremeter center, lalu masukkan ke dalam model dan simpan ke dalam variable
-segmentasi <- kmeans(x=pelanggan[field_yang_digunakan], centers=5, nstart=25)
+#terlihat pada plot, titik elbow adalah 3, jadikan sebagai paremeter center, lalu masukkan ke dalam model dan simpan ke dalam variable
+segmentasi <- kmeans(x=pelanggan[field_yang_digunakan], centers=3, nstart=25)
 segmentasi
 
 #masukkan hasil cluster ke dalam dataframe
 pelanggan$cluster <- segmentasi$cluster
 
 #kita bisa menganalisa data segmentasi dengan memfilter data mana saja yang masuk ke dalam cluster ke-1,2, dst
-pelanggan[which(pelanggan$cluster == 5),]
-length(which(pelanggan$cluster == 5))
+pelanggan[which(pelanggan$cluster == 1),]
+length(which(pelanggan$cluster == 1))
 
 #kita namakan tingkatan cluster kita
-Segmen.Pelanggan <- data.frame(cluster=c(1,2,3,4,5), Nama.Segmen=c("Gold Young Professional", "Silver Mid Professional", 
-                                                                   "Diamond Senior Member", "Silver Youth Gals", "Diamond Professional"))
+Segmen.Pelanggan <- data.frame(cluster=c(1,2,3), Nama.Segmen=c("Gen.Z Woman","Gen.Milenial Professional","Gen.X Professional"))
 
 #setelah selesai, kita gabungan semua referensi ke dalam bentuk list, ini berfungsi jika kita ingin menyimpan file ke dalam bentuk RDS
 Identitas.Cluster <- list(Profesi=Profesi, Jenis.Kelamin=Jenis.Kelamin, Tipe.Residen=Tipe.Residen, 
@@ -75,5 +74,5 @@ databaru <- merge(databaru, Identitas.Cluster$Tipe.Residen)
 databaru
 
 #menentukan data baru di cluster mana
-Identitas.Cluster$Segmen.Pelanggan[which.min(sapply( 1:5, function( x ) sum( ( databaru[Identitas.Cluster$field_yang_digunakan] - Identitas.Cluster$Segmentasi$centers[x,])^2 ) )),]
+Identitas.Cluster$Segmen.Pelanggan[which.min(sapply(1:3, function(x) sum((databaru[Identitas.Cluster$field_yang_digunakan] - Identitas.Cluster$Segmentasi$centers[x,])^2))),]
 
