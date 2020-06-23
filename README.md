@@ -1,2 +1,2 @@
 # MachineLearning-Costumer_Segmentation
-Bagaimana bila kita ingin mengelompokkan beberapa orang berdasarkan jenis kelamin, umur, nilai belanja pertahun?? Apakah mereka termasuk kelompok Silver, Gold, Diamond??  Tentu sulit jika kita harus mengelompokkanya secara manual, apalagi jika jumlah orangnya sampai ribuan, terlihat mustahil, tapi tidak denga Machine Learning, kali ini saya akan membuat projek yang akan menggelompokkan orang berdasarkan identitas mereka, untuk kali ini saya menggunakan R dan algortima KMeans
+Ini Adalah model Machine Learning yang digunakan untuk mencari segmen dari kostumer
