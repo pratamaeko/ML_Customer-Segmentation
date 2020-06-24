@@ -1,3 +1,3 @@
 # MachineLearning-Costumer_Segmentation
-Ini Adalah model Machine Learning yang digunakan untuk mencari segmen dari kostumer
+Ini Adalah model Machine Learning yang digunakan untuk mencari segmen dari kostumer </br>
 Model unsupervised (Clustering)
