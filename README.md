@@ -3,7 +3,7 @@ Ini Adalah model Machine Learning yang digunakan untuk mencari segmen dari kostu
 Model unsupervised (Clustering)</br>
 Versi 1, Dibuat dengan :
 - R Language
-- R Notebook
+- Jupyter Notebook
 - library ggplot2
 - Algoritma KMeans
 
